@@ -3,6 +3,8 @@ const zhihuRouter = new Router();
 const axios = require("axios");
 const { get, set, del } = require("../utils/cacheData");
 
+let zhihuCookie = process.env.ZHIHU_COOKIE;
+
 // 接口信息
 const routerInfo = {
   title: "知乎",
@@ -20,6 +22,7 @@ const url = "https://www.zhihu.com/hot";
 const headers = {
   "User-Agent":
     "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1",
+  "Cookie": zhihuCookie
 };
 
 // 数据处理
